@@ -168,7 +168,7 @@ class Game:
 
     def move_piece(self, piece: GenericPiece, x: int, y: int):
         assert piece in self.alive_pieces[piece.type]
-        assert self.out_of_bound(x, y)
+        assert not self.out_of_bound(x, y)
         self.board[piece.x][piece.y] = None
         piece.x = x
         piece.y = y
